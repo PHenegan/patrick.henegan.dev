@@ -1,12 +1,11 @@
 <script>
-  let { children } = $props();
+  import { link } from 'svelte-routing'
 </script>
-
 <style>
   .header {
     display: flex;
     justify-content: space-between;
-    background-color: #E0E0E0;
+    background-color: #101010;
   }
 
   .header-pages > * {
@@ -26,9 +25,9 @@
 
 <div class = "header">
   <ul class = "header-pages">
-    <li><a href = "/">Home</a></li>
-    <li><a href = "/projects">Projects</a></li>
-    <li><a href = "/experience">Experience</a></li>
+    <li><a href = "/" use:link>Home</a></li>
+    <li><a href = "/projects" use:link>Projects</a></li>
+    <li><a href = "/experience" use:link>Experience</a></li>
   </ul>
   <ul class = "header-links">
     <li><a href = "https://github.com/PHenegan"> GitHub</li>
@@ -37,4 +36,4 @@
 
 </div>
 
-{@render children()}
+
